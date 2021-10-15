@@ -1,6 +1,6 @@
 import { DoConnect } from '../config/database';
 
-export const getAllUsers = async () => {
+export const GetAllUsers = async () => {
     const query = await Users();
     const data = query.find({}).toArray();
     return await data;

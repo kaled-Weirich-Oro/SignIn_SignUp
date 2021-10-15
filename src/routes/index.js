@@ -2,7 +2,6 @@ import { Router } from 'express';
 import { name, version, author } from '../../package';
 import { getUser, getUsers, SignIn_Service, InsertUser_Service } from '../services/users';
 import { SignUp, Validate } from '../middlewares/users';
-import { reset } from 'nodemon';
 
 export const router = Router()
 
@@ -18,7 +17,6 @@ router.post('/signup', SignUp, async (_req, res) => {
 
 router.post('/signIn', async (_req, res) => {
     const validLogin = await SignIn_Service(_req.body);
-    console.log('Validalogin ', validLogin);
     if (validLogin) {
         res.send({signIn: validLogin});
     }

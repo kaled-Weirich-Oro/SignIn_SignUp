@@ -1,6 +1,6 @@
 import { userToken } from "../providers/tokens";
 import { v4 as uuidv4 } from 'uuid';
-import { getAllUsers, getUserBy_id, UpdateUser, InsertUser, SignIn } from "../repositories/users";
+import { GetAllUsers, getUserBy_id, UpdateUser, InsertUser, SignIn } from "../repositories/users";
 
 export const InsertUser_Service = async (data) => {    
     const id = uuidv4();
@@ -44,5 +44,5 @@ const VerifyLastLogin = (lastLogin) => {
     return false;
 }
 export const getUsers = async () => {
-    return await getAllUsers();
+    return await GetAllUsers();
 }
